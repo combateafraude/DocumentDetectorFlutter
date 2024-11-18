@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="custom_default">#80FF6E00</color>
+    <color name="custom_success">#B0F1FFFF</color>
+    <color name="custom_error">#667818FF</color>
+</resources>
