@@ -4,6 +4,7 @@ import 'package:caf_document_detector/document_capture_flow.dart';
 import 'package:caf_document_detector/document_detector.dart';
 import 'package:caf_document_detector/document_detector_events.dart';
 import 'package:caf_document_detector/enums.dart';
+import 'package:caf_document_detector/upload_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -50,17 +51,21 @@ class DocumentDetectorDemoState extends State<DocumentDetectorDemo> {
       ],
     );
 
+    UploadSettings uploadSettings = UploadSettings();
+
     AndroidSettings androidSettings = AndroidSettings(
-      securitySettings: SecuritySettings(
-        useAdb: true,
-        useDebug: true,
-        useDeveloperMode: true,
-        useEmulator: true,
-        useRoot: true,
-      ),
+        securitySettings: SecuritySettings(
+            useAdb: false,
+            useDebug: false,
+            useDeveloperMode: false,
+            useEmulator: false,
+            useRoot: false
+        )
     );
 
+
     documentDetector.setAndroidSettings(androidSettings);
+    documentDetector.setUploadSettings(uploadSettings);
     documentDetector.setPersonId(personId);
     documentDetector.setStage(CafStage.prod);
 
