@@ -171,21 +171,19 @@ class DocumentDetectorPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             val sensorOrientationMessage = messageSettings["sensorOrientationMessage"] as String?
             val sensorLuminosityMessage = messageSettings["sensorLuminosityMessage"] as String?
             val sensorStabilityMessage = messageSettings["sensorStabilityMessage"] as String?
-            val popupDocumentSubtitleMessage =
-                messageSettings["popupDocumentSubtitleMessage"] as String?
-            val aiScanDocumentMessage = messageSettings["aiScanDocumentMessage"] as String?
-            val aiGetCloserMessage = messageSettings["aiGetCloserMessage"] as String?
-            val aiCentralizeMessage = messageSettings["aiCentralizeMessage"] as String?
-            val aiMoveAwayMessage = messageSettings["aiMoveAwayMessage"] as String?
-            val aiAlignMessage = messageSettings["aiAlignMessage"] as String?
-            val aiTurnDocumentMessage = messageSettings["aiTurnDocumentMessage"] as String?
-            val aiCapturedMessage = messageSettings["aiCapturedMessage"] as String?
+            val popupDocumentSubtitleMessage = messageSettings["popupDocumentSubtitleMessage"] as String?
+            val aiScanDocumentMessage = messageSettings["scanDocumentMessage"] as String?
+            val aiGetCloserMessage = messageSettings["getCloserMessage"] as String?
+            val aiCentralizeMessage = messageSettings["centralizeDocumentMessage"] as String?
+            val aiMoveAwayMessage = messageSettings["moveAwayMessage"] as String?
+            val aiAlignMessage = messageSettings["alignDocumentMessage"] as String?
+            val aiTurnDocumentMessage = messageSettings["turnDocumentMessage"] as String?
+            val aiCapturedMessage = messageSettings["documentCapturedMessage"] as String?
 
             // This messages customization only exists in the Android version
             val popupConfirmButtonMessage = messageSettings["popupConfirmButtonMessage"] as String?
             val wrongDocumentTypeMessage = messageSettings["wrongDocumentTypeMessage"] as String?
-            val unsupportedDocumentMessage =
-                messageSettings["unsupportedDocumentMessage"] as String?
+            val unsupportedDocumentMessage = messageSettings["unsupportedDocumentMessage"] as String?
             val documentNotFoundMessage = messageSettings["documentNotFoundMessage"] as String?
 
             val settings = MessageSettings(
@@ -247,8 +245,7 @@ class DocumentDetectorPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                     val time = stability["deviceStillMilliseconds"] as Int
                     mDocumentDetectorBuilder.setStabilitySensorSettings(
                         SensorStabilitySettings(
-                            time.toLong(),
-                            threshold
+                            time.toLong(), threshold
                         )
                     )
                 }
@@ -324,12 +321,9 @@ class DocumentDetectorPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
 
             val feedbackColors = androidSettings["feedbackColors"] as HashMap<*, *>?
             feedbackColors?.let {
-                val defaultColorResId =
-                    getResourceId(feedbackColors["defaultColorResName"] as String, COLOR_RES)
-                val successColorResId =
-                    getResourceId(feedbackColors["successColorResName"] as String, COLOR_RES)
-                val errorColorResId =
-                    getResourceId(feedbackColors["errorColorResName"] as String, COLOR_RES)
+                val defaultColorResId = getResourceId(feedbackColors["defaultColorResName"] as String, COLOR_RES)
+                val successColorResId = getResourceId(feedbackColors["successColorResName"] as String, COLOR_RES)
+                val errorColorResId = getResourceId(feedbackColors["errorColorResName"] as String, COLOR_RES)
 
                 mDocumentDetectorBuilder.setFeedbackColors(
                     FeedbackColors(defaultColorResId, successColorResId, errorColorResId)
@@ -420,8 +414,7 @@ class DocumentDetectorPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     }
 
     private fun getResourceId(resourceName: String, resourceType: String): Int {
-        val resId =
-            activity.resources.getIdentifier(resourceName, resourceType, activity.packageName)
+        val resId = activity.resources.getIdentifier(resourceName, resourceType, activity.packageName)
         return if (resId != 0) resId
         else throw IllegalArgumentException("Invalid resource name: $resourceName of type $resourceType")
     }

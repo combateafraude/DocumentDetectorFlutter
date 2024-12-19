@@ -77,6 +77,7 @@ extension DocumentDetectorPlugin {
         let sensorLuminosityMessage = messageSettings["sensorLuminosityMessage"] as? String ?? nil
         let sensorStabilityMessage = messageSettings["sensorStabilityMessage"] as? String ?? nil
         let popupDocumentSubtitleMessage = messageSettings["popupDocumentSubtitleMessage"] as? String ?? nil
+        let holdDocumentMessage = messageSettings["holdItMessage"] as? String ?? nil
         let scanDocumentMessage = messageSettings["scanDocumentMessage"] as? String ?? nil
         let getCloserMessage = messageSettings["getCloserMessage"] as? String ?? nil
         let centralizeDocumentMessage = messageSettings["centralizeDocumentMessage"] as? String ?? nil
@@ -97,6 +98,7 @@ extension DocumentDetectorPlugin {
             sensorLuminosityMessage: sensorLuminosityMessage,
             sensorOrientationMessage: sensorOrientationMessage,
             sensorStabilityMessage: sensorStabilityMessage,
+            holdDocumentMessage: holdDocumentMessage,
             predictorScanDocumentMessage: scanDocumentMessage,
             predictorGetCloserMessage: getCloserMessage,
             predictorCentralizeMessage: centralizeDocumentMessage,
