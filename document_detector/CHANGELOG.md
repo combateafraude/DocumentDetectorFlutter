@@ -1,5 +1,10 @@
 # Release Notes
 
+## v7.0.3 (Dec, 03 2024)
+
+- Update Native SDKs (Android and iOS).
+- Fix messageSettings to work correctly in both Android and iOS.
+
 ## v7.0.2 (Aug, 29 2024)
 
 Fix Android SDK plugin activity result listener.

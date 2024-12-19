@@ -43,6 +43,9 @@ public class DocumentDetectorPlugin: NSObject, FlutterPlugin, DocumentDetectorCo
             for (_, step) in captureFlow.enumerated() {
                 if let type = step["documentType"] as? String {
                     let documentType = convertToDocument(documentType: type)
+                    if let messageSettings = arguments["messageSettings"] as? [String: Any] ?? nil {
+                        documentType.wrongDocumentText = messageSettings["wrongDocumentTypeMessage"] as? String ?? nil
+                    }
                     var documentIllustration: UIImage?
                     var documentLabel : String?
                     

@@ -1,12 +1,12 @@
 import 'package:flutter/services.dart';
 
 import 'android_settings/android_settings.dart';
-import 'ios_settings/ios_settings.dart';
 import 'capture_preview_settings.dart';
+import 'country_code_list.dart';
 import 'document_capture_flow.dart';
 import 'document_detector_events.dart';
 import 'enums.dart';
-import 'country_code_list.dart';
+import 'ios_settings/ios_settings.dart';
 import 'message_settings.dart';
 import 'upload_settings.dart';
 

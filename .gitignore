@@ -25,3 +25,8 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+*.xml
+.idea/DocumentDetectorFlutter.iml
+document_detector_example/ios/Podfile.lock
+/document_detector_example/ios/Runner.xcworkspace
+document_detector/.metadata

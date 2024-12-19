@@ -19,7 +19,7 @@ Check out our dedicated documentation page for this SDK Plugin. See more details
 | compileSdk | 34      |
 
 | iOS | Version |
-| --- | ------- |
-| iOS Target | 12.0 |
-| Xcode | 14.3.1+ |
-| Swift | 5.3.2+ |
+| --- |---------|
+| iOS Target | 13.0+   |
+| Xcode | 15.4+ |
+| Swift | 5.3.2+  |
