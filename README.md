@@ -14,9 +14,9 @@ Check out our dedicated documentation page for this SDK Plugin. See more details
 | Dart | `>=2.15.0 <4.0.0` |
 
 | Android | Version |
-| ------- | ------- |
-| minSdk | 21 |
-| compileSdk | 33 |
+| ------- |---------|
+| minSdk | 26      |
+| compileSdk | 34      |
 
 | iOS | Version |
 | --- | ------- |
