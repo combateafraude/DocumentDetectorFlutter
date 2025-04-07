@@ -3,8 +3,8 @@
 # Run `pod lib lint document_detector.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'caf_document_detector'
-  s.version          = '7.0.2'
+  s.name             = 'flutter_caf_document_detector'
+  s.version          = '1.0.0'
   s.summary          = 'A Flutter plugin for Caf.io solution for document detection.'
   s.description      = <<-DESC
 A Flutter plugin for Caf.io solution for document detection. It uses advanced computer vision algorithms to identify and extract documents from photos or camera frames.
@@ -21,5 +21,5 @@ A Flutter plugin for Caf.io solution for document detection. It uses advanced co
   s.swift_version = '5.3.2'
   s.static_framework = true
   s.dependency 'Flutter'
-  s.dependency 'DocumentDetector', '15.0.3'
+  s.dependency 'DocumentDetector', '16.0.2'
 end

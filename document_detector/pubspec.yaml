@@ -1,6 +1,6 @@
-name: caf_document_detector
+name: flutter_caf_document_detector
 description: "A Flutter plugin for Caf.io solution for document detection. It uses advanced computer vision algorithms to identify and extract documents from photos or camera frames."
-version: 7.0.3
+version: 1.0.0
 homepage: https://www.caf.io/
 
 environment:

@@ -5,7 +5,7 @@ buildscript {
     ext {
         kotlin_version = '1.9.20'
         gradle_version = '8.3.2'
-        document_detector_sdk_version = '9.2.0'
+        document_detector_sdk_version = '9.3.0'
     }
     
     repositories {
@@ -61,7 +61,7 @@ android {
     }
 
     dependencies {
-        implementation "com.combateafraude.sdk:document-detector:$document_detector_sdk_version"
+        implementation "io.caf.sdk:document-detector:$document_detector_sdk_version"
     }
 
     testOptions {

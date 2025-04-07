@@ -119,9 +119,9 @@ public class DocumentDetectorPlugin: NSObject, FlutterPlugin, DocumentDetectorCo
         
         // Set passport restriction list settings
         if let countryCodeList = arguments["countryCodeList"] as? [String] ?? nil {
-            var countryCodes : [CafCountryCodes] = []
+            var countryCodes : [DDCountryCodes] = []
             for countryCode in countryCodeList {
-                if let countryCodeEnum = CafCountryCodes(rawValue: countryCode) {
+                if let countryCodeEnum = DDCountryCodes(rawValue: countryCode) {
                     countryCodes.append(countryCodeEnum)
                 }
             }
@@ -130,7 +130,7 @@ public class DocumentDetectorPlugin: NSObject, FlutterPlugin, DocumentDetectorCo
         
         // Set document upload flow settings
         if let uploadSettings = arguments["uploadSettings"] as? [String: Any] ?? nil {
-            let settings = CafUploadSettings()
+            let settings = DDUploadSettings()
             
             // Set enable file compression
             if let compress = uploadSettings["compress"] as? Bool ?? nil {
@@ -162,6 +162,12 @@ public class DocumentDetectorPlugin: NSObject, FlutterPlugin, DocumentDetectorCo
         
         // Set iOS exclusive customization settings
         if let iosSettings = arguments["iosSettings"] as? [String: Any] ?? nil {
+            
+//            // Set multi-language support
+//            if let enableMultilanguage = iosSettings["enableMultilanguage"] as? Bool ?? nil {
+//                _ = mDocumentDetectorBuilder.enableMultiLanguage(enableMultilanguage)
+//            }
+            
             // Set SDK sensors settings
             if let sensorSettings = iosSettings["sensorSettings"] as? [String: Any] ?? nil {
                 // Set luminosity sensor
@@ -194,10 +200,7 @@ public class DocumentDetectorPlugin: NSObject, FlutterPlugin, DocumentDetectorCo
                         time: 45)
                 }
             }
-            // Set multi-language support
-            if let enableMultilanguage = iosSettings["enableMultilanguage"] as? Bool ?? nil {
-                _ = mDocumentDetectorBuilder.enableMultiLanguage(enableMultilanguage)
-            }
+            
             // Set capture resolution
             if let resolution = iosSettings["cameraResolution"] as? String ?? nil {
                 _ = mDocumentDetectorBuilder.setResolutionSettings(

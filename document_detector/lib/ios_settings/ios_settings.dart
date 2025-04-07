@@ -1,4 +1,5 @@
-import 'package:caf_document_detector/enums.dart';
+import 'package:flutter_caf_document_detector/enums.dart';
+
 import 'layout_customization.dart';
 import 'sensor_settings.dart';
 

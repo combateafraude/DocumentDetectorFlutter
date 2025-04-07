@@ -1,15 +1,14 @@
-import 'package:caf_document_detector/android_settings/android_settings.dart';
-import 'package:caf_document_detector/android_settings/security_settings.dart';
-import 'package:caf_document_detector/capture_preview_settings.dart';
-import 'package:caf_document_detector/document_capture_flow.dart';
-import 'package:caf_document_detector/document_captures_model.dart';
-import 'package:caf_document_detector/document_detector_events.dart';
-import 'package:caf_document_detector/enums.dart';
-import 'package:caf_document_detector/document_detector.dart';
-import 'package:caf_document_detector/upload_settings.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_caf_document_detector/android_settings/android_settings.dart';
+import 'package:flutter_caf_document_detector/android_settings/security_settings.dart';
+import 'package:flutter_caf_document_detector/capture_preview_settings.dart';
+import 'package:flutter_caf_document_detector/document_capture_flow.dart';
+import 'package:flutter_caf_document_detector/document_captures_model.dart';
+import 'package:flutter_caf_document_detector/document_detector.dart';
+import 'package:flutter_caf_document_detector/document_detector_events.dart';
+import 'package:flutter_caf_document_detector/enums.dart';
+import 'package:flutter_caf_document_detector/upload_settings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,8 +38,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   void startDocumentDetector(List<DocumentCaptureFlow> captureFlow) async {
-    personId = personIdController.text;
-    mobileToken = mobileTokenController.text;
+    personId =
+        personIdController.text.isNotEmpty ? personIdController.text : personId;
+    mobileToken = mobileTokenController.text.isNotEmpty
+        ? mobileTokenController.text
+        : mobileToken;
 
     String resultEvent = "";
     String resultDescription = "";
@@ -54,9 +56,7 @@ class _MyAppState extends State<MyApp> {
             useDebug: true,
             useDeveloperMode: true,
             useEmulator: true,
-            useRoot: true
-        )
-    );
+            useRoot: true));
 
     documentDetector.setAndroidSettings(androidSettings);
     documentDetector.setNetworkSettings(20);
@@ -115,8 +115,11 @@ class _MyAppState extends State<MyApp> {
 
   void startDocumentDetectorUploadFlow(
       List<DocumentCaptureFlow> captureFlow) async {
-    personId = personIdController.text;
-    mobileToken = mobileTokenController.text;
+    personId =
+        personIdController.text.isNotEmpty ? personIdController.text : personId;
+    mobileToken = mobileTokenController.text.isNotEmpty
+        ? mobileTokenController.text
+        : mobileToken;
 
     String resultEvent = "";
     String resultDescription = "";
@@ -190,12 +193,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: const Text(
-                'DocumentDetector 7 Flutter Playground',
-                softWrap: true,
-                maxLines: 2,
-                textAlign: TextAlign.center
-            ),
+            title: const Text('DocumentDetector 7 Flutter Playground',
+                softWrap: true, maxLines: 2, textAlign: TextAlign.center),
           ),
           body: Container(
               margin: const EdgeInsets.all(20.0),
@@ -249,11 +248,9 @@ class _MyAppState extends State<MyApp> {
                         onPressed: () async {
                           startDocumentDetector([
                             DocumentCaptureFlow(
-                                documentType: DocumentType.cnhFront
-                            ),
+                                documentType: DocumentType.cnhFront),
                             DocumentCaptureFlow(
-                                documentType: DocumentType.cnhBack
-                            )
+                                documentType: DocumentType.cnhBack)
                           ]);
                         },
                       )
@@ -309,9 +306,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                 ],
-              )
-          )
-      ),
+              ))),
     );
   }
 }
