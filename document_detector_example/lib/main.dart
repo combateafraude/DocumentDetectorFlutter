@@ -9,6 +9,7 @@ import 'package:flutter_caf_document_detector/document_detector.dart';
 import 'package:flutter_caf_document_detector/document_detector_events.dart';
 import 'package:flutter_caf_document_detector/enums.dart';
 import 'package:flutter_caf_document_detector/upload_settings.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,6 +59,7 @@ class _MyAppState extends State<MyApp> {
             useEmulator: true,
             useRoot: true));
 
+    documentDetector.setEnableMultiLanguage(true);
     documentDetector.setAndroidSettings(androidSettings);
     documentDetector.setNetworkSettings(20);
     documentDetector.setStage(isBeta ? CafStage.beta : CafStage.prod);
@@ -137,6 +139,7 @@ class _MyAppState extends State<MyApp> {
             useEmulator: true,
             useRoot: true));
 
+    documentDetector.setEnableMultiLanguage(true);
     documentDetector.setUploadSettings(uploadSettings);
     documentDetector.setAndroidSettings(androidSettings);
     documentDetector.setPersonId(personId);
@@ -191,6 +194,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'), // English
+        Locale('es'), // Spanish
+      ],
       home: Scaffold(
           appBar: AppBar(
             title: const Text('DocumentDetector 7 Flutter Playground',

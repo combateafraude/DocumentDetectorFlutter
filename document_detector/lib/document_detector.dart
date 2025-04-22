@@ -35,6 +35,7 @@ class DocumentDetector {
   PreviewSettings? previewSettings;
   AndroidSettings? androidSettings;
   IOSSettings? iosSettings;
+  bool _enableMultiLanguage = true;
 
   DocumentDetector({required this.mobileToken, required this.captureFlow});
 
@@ -147,10 +148,15 @@ class DocumentDetector {
     this.iosSettings = iosSettings;
   }
 
+  void setEnableMultiLanguage(bool enableMultiLanguage) {
+    _enableMultiLanguage = enableMultiLanguage;
+  }
+
   Future<DocumentDetectorEvent> start() async {
     Map<String, dynamic> params = {};
 
     params['mobileToken'] = mobileToken;
+    params['enableMultiLanguage'] = _enableMultiLanguage;
     params['captureFlow'] = captureFlow.map((e) => e.asMap()).toList();
     params['personId'] = personId;
     params['urlExpirationTime'] = urlExpirationTime;
