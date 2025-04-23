@@ -202,6 +202,7 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [
         Locale('en'), // English
         Locale('es'), // Spanish
+        Locale('pt'), // Portuguese
       ],
       home: Scaffold(
           appBar: AppBar(
