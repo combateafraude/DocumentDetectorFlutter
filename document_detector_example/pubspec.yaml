@@ -16,6 +16,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
   flutter_caf_document_detector:
     # See https://dart.dev/tools/pub/dependencies#version-constraints

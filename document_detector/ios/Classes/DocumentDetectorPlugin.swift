@@ -34,8 +34,9 @@ public class DocumentDetectorPlugin: NSObject, FlutterPlugin, DocumentDetectorCo
         guard let mobileToken = arguments["mobileToken"] as? String else {
             fatalError("Critical error: Unable to get mobileToken")
         }
-        
-        var mDocumentDetectorBuilder = DocumentDetectorSdk.CafBuilder(mobileToken: mobileToken)
+
+        let enableMultiLanguage = arguments["enableMultiLanguage"] as? Bool ?? true
+        var mDocumentDetectorBuilder = DocumentDetectorSdk.CafBuilder(mobileToken: mobileToken, enableMultiLanguage: enableMultiLanguage)
         
         // Set document capture flow
         if let captureFlow = arguments["captureFlow"] as? [[String: Any]] ?? nil {
