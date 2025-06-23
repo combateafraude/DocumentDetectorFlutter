@@ -21,5 +21,5 @@ A Flutter plugin for Caf.io solution for document detection. It uses advanced co
   s.swift_version = '5.3.2'
   s.static_framework = true
   s.dependency 'Flutter'
-  s.dependency 'DocumentDetector', '16.0.2'
+  s.dependency 'DocumentDetector', '16.0.3'
 end
