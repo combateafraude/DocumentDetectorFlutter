@@ -2,6 +2,12 @@
 
 # Changelog
 
+## [1.0.2] - 2025-06-17
+
+### Highlights
+
+- Improved document detector non-required attributes.
+
 ## [1.0.1] - 2025-06-17
 
 ### Highlights
